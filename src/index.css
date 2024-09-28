@@ -1,0 +1,34 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.flip-box {
+  perspective: 1000px; /* Allows the 3D flip */
+}
+
+.flip-box-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-inner.flipped {
+  transform: rotateY(180deg); /* Flip the card */
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back side when not visible */
+}
+
+.flip-box-back {
+  transform: rotateY(180deg); /* Back side initially rotated 180 degrees */
+  background-color: #007bff;
+  color: white;
+}
